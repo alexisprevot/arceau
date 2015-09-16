@@ -55,6 +55,23 @@ $moufManager->getConfigManager()->setConstantsDefinitionArray(array (
 $moufManager->setAllVariables(array (
   'splashDefaultControllersNamespace' => 'Arceau\\Controllers\\',
   'splashDefaultViewsDirectory' => 'views/',
+  'splashexludeextentions' => 
+  array (
+    0 => 'js',
+    1 => 'ico',
+    2 => 'gif',
+    3 => 'jpg',
+    4 => 'png',
+    5 => 'css',
+    6 => 'woff',
+    7 => 'ttf',
+    8 => 'svg',
+    9 => 'eot',
+  ),
+  'splashexludefolders' => 
+  array (
+    0 => 'vendor',
+  ),
 ));
 
 $moufManager->addComponentInstances(array (
@@ -2134,6 +2151,13 @@ return $dbalConnection;
 	 }
 
 	/**
+	 * @return Mouf\Utils\Log\ErrorLogLogger
+	 */
+	 public static function getErrorLogLogger() {
+	 	return MoufManager::getMoufManager()->get('errorLogLogger');
+	 }
+
+	/**
 	 * @return Mouf\Doctrine\ORM\Mapping\EscapingQuoteStrategy
 	 */
 	 public static function getEscapingQuoteStrategy() {
@@ -2432,13 +2456,6 @@ return $dbalConnection;
 	 */
 	 public static function getWhoopsMiddleware() {
 	 	return MoufManager::getMoufManager()->get('whoopsMiddleware');
-	 }
-
-	/**
-	 * @return Mouf\Utils\Log\ErrorLogLogger
-	 */
-	 public static function getErrorLogLogger() {
-	 	return MoufManager::getMoufManager()->get('errorLogLogger');
 	 }
 
 }

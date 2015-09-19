@@ -352,6 +352,16 @@ return new \\Doctrine\\Common\\Annotations\\CachedReader($reader, $container->ge
     'class' => 'Mouf\\Html\\HtmlElement\\HtmlBlock',
     'external' => false,
     'weak' => false,
+    'fieldProperties' => 
+    array (
+    ),
+    'fieldBinds' => 
+    array (
+      'children' => 
+      array (
+        0 => 'messageWidget',
+      ),
+    ),
   ),
   'block.footer' => 
   array (
@@ -1210,6 +1220,33 @@ return $dbalConnection;',
         array (
         ),
       ),
+      4 => 
+      array (
+        'value' => 'entityManager',
+        'parametertype' => 'object',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      5 => 
+      array (
+        'value' => 'userDao',
+        'parametertype' => 'object',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      6 => 
+      array (
+        'value' => 'userService',
+        'parametertype' => 'object',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
     ),
   ),
   'javascript.ckeditor' => 
@@ -1275,7 +1312,7 @@ return $dbalConnection;',
         array (
         ),
       ),
-      'ifLoggedRedirectUrl' => 
+      'defaultRedirectUrl' => 
       array (
         'value' => 'admin/',
         'type' => 'string',
@@ -1283,7 +1320,7 @@ return $dbalConnection;',
         array (
         ),
       ),
-      'defaultRedirectUrl' => 
+      'ifLoggedRedirectUrl' => 
       array (
         'value' => 'admin/',
         'type' => 'string',
@@ -1312,10 +1349,8 @@ return $dbalConnection;',
     array (
       0 => 
       array (
-        'value' => 
-        array (
-        ),
-        'parametertype' => 'object',
+        'value' => NULL,
+        'parametertype' => 'primitive',
         'type' => 'string',
         'metadata' => 
         array (

@@ -23,7 +23,14 @@ class Right {
      *
      * @var int
      */
-    private $id = null;
+    private $id;
+
+    /**
+     * @ORM\Column(type="string")
+     *
+     * @var string
+     */
+    private $label;
 
     /**
      * @return int
@@ -31,5 +38,21 @@ class Right {
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLabel()
+    {
+        return $this->label;
+    }
+
+    /**
+     * @param string $label
+     */
+    public function setLabel($label)
+    {
+        $this->label = $label;
     }
 }

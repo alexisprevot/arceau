@@ -17,6 +17,8 @@ use Arceau\Model\Entities\Right;
 /**
  * The RightBaseDao class will maintain the persistance of Right class into the Rights table.
 
+ * @method Right findByLabel($fieldValue, $orderBy = null, $limit = null, $offset = null)
+ * @method Right findOneByLabel($fieldValue, $orderBy = null)
 
  */
 class RightBaseDao extends EntityRepository implements DAOInterface
@@ -102,4 +104,16 @@ class RightBaseDao extends EntityRepository implements DAOInterface
         }
     }
 
+    /**
+     * Finds only one entity by Label.
+     * Throw an exception if more than one entity was found.
+     *
+     * @param mixed $fieldValue the value of the filtered field
+     *
+     * @return Right
+     */
+    public function findUniqueByLabel($fieldValue)
+    {
+        return $this->findUniqueBy(array('label' => $fieldValue));
+    }
 }

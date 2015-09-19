@@ -9,6 +9,7 @@
 namespace Arceau\Model\Entities;
 
 use Doctrine\ORM\Mapping as ORM;
+use Mouf\Security\UserService\UserInterface;
 
 /**
  * Class User
@@ -16,7 +17,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="Users")
  * @ORM\Entity(repositoryClass="Arceau\Model\DAOs\UserDao")
  */
-class User {
+class User implements UserInterface {
 
     /**
      * @ORM\Id @ORM\GeneratedValue @ORM\Column(type="integer")
@@ -52,6 +53,13 @@ class User {
      * @var string
      */
     private $prenom;
+
+    /**
+     * @ORM\Column(type="integer")
+     *
+     * @var int
+     */
+    private $right_id;
 
     /* --- Getters and setters --- */
 
@@ -127,8 +135,27 @@ class User {
         $this->prenom = $prenom;
     }
 
+    /**
+     * @return string
+     */
     public function getLogin()
     {
         return $this->getEmail();
+    }
+
+    /**
+     * @return int
+     */
+    public function getRightId()
+    {
+        return $this->right_id;
+    }
+
+    /**
+     * @param int $right_id
+     */
+    public function setRightId($right_id)
+    {
+        $this->right_id = $right_id;
     }
 }

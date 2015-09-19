@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "bc76a70f341144ec31e61fcf750484fd",
-    "content-hash": "9666b154036866d319a51f4d3101f460",
+    "hash": "23e12e03925e588cd937508b1243bd0e",
+    "content-hash": "d49e5f65cb2d33810f5af4cacece6096",
     "packages": [
         {
             "name": "components/bootstrap",
@@ -2512,16 +2512,16 @@
         },
         {
             "name": "mouf/security.userservice",
-            "version": "v2.0.0",
+            "version": "2.1.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thecodingmachine/security.userservice.git",
-                "reference": "ac2739f414689349ea008f9c173723bb832c8861"
+                "reference": "fb5ca1e3a8cad5291e184e5fbb400ee8c6f8de63"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thecodingmachine/security.userservice/zipball/ac2739f414689349ea008f9c173723bb832c8861",
-                "reference": "ac2739f414689349ea008f9c173723bb832c8861",
+                "url": "https://api.github.com/repos/thecodingmachine/security.userservice/zipball/fb5ca1e3a8cad5291e184e5fbb400ee8c6f8de63",
+                "reference": "fb5ca1e3a8cad5291e184e5fbb400ee8c6f8de63",
                 "shasum": ""
             },
             "require": {
@@ -2558,6 +2558,10 @@
                         {
                             "title": "UserService - Quick Example",
                             "url": "doc/userservicesample.md"
+                        },
+                        {
+                            "title": "UserService - 'Remember Me' feature",
+                            "url": "doc/remember_me.md"
                         }
                     ],
                     "logo": "logo.png"
@@ -2586,7 +2590,7 @@
                 "security",
                 "user"
             ],
-            "time": "2014-06-04 16:08:19"
+            "time": "2015-06-11 04:44:31"
         },
         {
             "name": "mouf/security.userservice-splash",

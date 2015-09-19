@@ -2,6 +2,7 @@
 
 namespace Arceau\Model\DAOs;
 
+use Arceau\Model\Entities\User;
 use Mouf\Security\RightsService\RightsDaoInterface;
 use Mouf\Security\RightsService\RightInterface;
 
@@ -18,6 +19,7 @@ class RightDao extends RightBaseDao implements RightsDaoInterface {
      */
     public function getRightsForUser($user_id)
     {
+        return [];
     }
 
     /**

@@ -57,6 +57,4 @@ class Cotisation {
     {
         $this->somme = $somme;
     }
-
-
 }

@@ -127,5 +127,8 @@ class User {
         $this->prenom = $prenom;
     }
 
-
+    public function getLogin()
+    {
+        return $this->getEmail();
+    }
 }

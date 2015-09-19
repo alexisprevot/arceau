@@ -76,6 +76,13 @@ $moufManager->setAllVariables(array (
 ));
 
 $moufManager->addComponentInstances(array (
+  '__anonymous__61bc_1625135474' => 
+  array (
+    'class' => 'Mouf\\Security\\Views\\SimpleLoginView',
+    'external' => false,
+    'anonymous' => true,
+    'weak' => true,
+  ),
   '__anonymous__ad9b_112948783' => 
   array (
     'class' => 'Doctrine\\ORM\\Tools\\Console\\Command\\ClearCache\\QueryCommand',
@@ -1160,6 +1167,51 @@ return $dbalConnection;',
       ),
     ),
   ),
+  'indexController' => 
+  array (
+    'class' => 'Arceau\\Controllers\\IndexController',
+    'external' => false,
+    'weak' => false,
+    'constructor' => 
+    array (
+      0 => 
+      array (
+        'value' => 'psr.errorLogLogger',
+        'parametertype' => 'object',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      1 => 
+      array (
+        'value' => 'bootstrapTemplate',
+        'parametertype' => 'object',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      2 => 
+      array (
+        'value' => 'block.content',
+        'parametertype' => 'object',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      3 => 
+      array (
+        'value' => 'twigEnvironment',
+        'parametertype' => 'object',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+    ),
+  ),
   'javascript.ckeditor' => 
   array (
     'class' => 'Mouf\\Html\\Utils\\WebLibraryManager\\WebLibrary',
@@ -1185,6 +1237,55 @@ return $dbalConnection;',
         array (
         ),
         'parametertype' => 'object',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+    ),
+  ),
+  'login' => 
+  array (
+    'class' => 'Mouf\\Security\\Controllers\\SimpleLoginController',
+    'external' => false,
+    'weak' => false,
+    'fieldBinds' => 
+    array (
+      'template' => 'bootstrapTemplate',
+      'userService' => 'userService',
+      'simpleLoginView' => '__anonymous__61bc_1625135474',
+      'messageService' => 'userMessageService',
+      'contentBlock' => 'block.content',
+    ),
+    'fieldProperties' => 
+    array (
+      'badCredentialsLabel' => 
+      array (
+        'value' => 'Sorry, your login or password seem to be incorrect',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      'logoutRedirectUrl' => 
+      array (
+        'value' => 'login/',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      'ifLoggedRedirectUrl' => 
+      array (
+        'value' => 'admin/',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      'defaultRedirectUrl' => 
+      array (
+        'value' => 'admin/',
         'type' => 'string',
         'metadata' => 
         array (
@@ -1483,6 +1584,60 @@ return $dbalConnection;',
       ),
     ),
   ),
+  'packageRenderer_mouf/security.simplelogincontroller' => 
+  array (
+    'class' => 'Mouf\\Html\\Renderer\\FileBasedRenderer',
+    'external' => false,
+    'weak' => false,
+    'constructor' => 
+    array (
+      0 => 
+      array (
+        'value' => 'vendor/mouf/security.simplelogincontroller/src/templates',
+        'parametertype' => 'primitive',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      1 => 
+      array (
+        'value' => 'rendererCacheService',
+        'parametertype' => 'object',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      2 => 
+      array (
+        'value' => 'package',
+        'parametertype' => 'primitive',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      3 => 
+      array (
+        'value' => 0,
+        'parametertype' => 'primitive',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      4 => 
+      array (
+        'value' => 'twigEnvironment',
+        'parametertype' => 'object',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+    ),
+  ),
   'patchService' => 
   array (
     'class' => 'Mouf\\Utils\\Patcher\\PatchService',
@@ -1541,6 +1696,24 @@ return $dbalConnection;',
     'external' => false,
     'weak' => false,
   ),
+  'rightDao' => 
+  array (
+    'class' => 'Arceau\\Model\\DAOs\\RightDao',
+    'external' => false,
+    'weak' => false,
+    'constructor' => 
+    array (
+      0 => 
+      array (
+        'value' => 'entityManager',
+        'parametertype' => 'object',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+    ),
+  ),
   'rightsService' => 
   array (
     'class' => 'Mouf\\Security\\RightsService\\MoufRightService',
@@ -1549,42 +1722,10 @@ return $dbalConnection;',
     'fieldBinds' => 
     array (
       'userService' => 'userService',
+      'rightsDao' => 'rightDao',
     ),
-  ),
-  'rootController' => 
-  array (
-    'class' => 'Arceau\\Controllers\\RootController',
-    'external' => false,
-    'weak' => false,
-    'constructor' => 
+    'fieldProperties' => 
     array (
-      0 => 
-      array (
-        'value' => 'bootstrapTemplate',
-        'parametertype' => 'object',
-        'type' => 'string',
-        'metadata' => 
-        array (
-        ),
-      ),
-      1 => 
-      array (
-        'value' => 'block.content',
-        'parametertype' => 'object',
-        'type' => 'string',
-        'metadata' => 
-        array (
-        ),
-      ),
-      2 => 
-      array (
-        'value' => 'twigEnvironment',
-        'parametertype' => 'object',
-        'type' => 'string',
-        'metadata' => 
-        array (
-        ),
-      ),
     ),
   ),
   'rootUrlInlineWebLibrary' => 
@@ -1835,12 +1976,13 @@ return $dbalConnection;',
     'weak' => false,
     'fieldBinds' => 
     array (
-      'log' => 'psr.errorLogLogger',
       'sessionManager' => 'sessionManager',
       'authenticationListeners' => 
       array (
         0 => 'rightsService',
       ),
+      'userDao' => 'userDao',
+      'log' => 'psr.errorLogLogger',
     ),
     'fieldProperties' => 
     array (
@@ -1848,6 +1990,14 @@ return $dbalConnection;',
       array (
         'value' => 'SECRET',
         'type' => 'config',
+        'metadata' => 
+        array (
+        ),
+      ),
+      'loginPageUrl' => 
+      array (
+        'value' => 'login/',
+        'type' => 'string',
         'metadata' => 
         array (
         ),
@@ -2272,10 +2422,24 @@ return $dbalConnection;
 	 }
 
 	/**
+	 * @return Arceau\Controllers\IndexController
+	 */
+	 public static function getIndexController() {
+	 	return MoufManager::getMoufManager()->get('indexController');
+	 }
+
+	/**
 	 * @return Mouf\Html\Utils\WebLibraryManager\WebLibrary
 	 */
 	 public static function getJavascript_ckeditor() {
 	 	return MoufManager::getMoufManager()->get('javascript.ckeditor');
+	 }
+
+	/**
+	 * @return Mouf\Security\Controllers\SimpleLoginController
+	 */
+	 public static function getLogin() {
+	 	return MoufManager::getMoufManager()->get('login');
 	 }
 
 	/**
@@ -2356,6 +2520,13 @@ return $dbalConnection;
 	 }
 
 	/**
+	 * @return Mouf\Html\Renderer\FileBasedRenderer
+	 */
+	 public static function getPackageRenderer_moufsecurity_simplelogincontroller() {
+	 	return MoufManager::getMoufManager()->get('packageRenderer_mouf/security.simplelogincontroller');
+	 }
+
+	/**
 	 * @return Mouf\Utils\Patcher\PatchService
 	 */
 	 public static function getPatchService() {
@@ -2391,17 +2562,17 @@ return $dbalConnection;
 	 }
 
 	/**
+	 * @return Arceau\Model\DAOs\RightDao
+	 */
+	 public static function getRightDao() {
+	 	return MoufManager::getMoufManager()->get('rightDao');
+	 }
+
+	/**
 	 * @return Mouf\Security\RightsService\MoufRightService
 	 */
 	 public static function getRightsService() {
 	 	return MoufManager::getMoufManager()->get('rightsService');
-	 }
-
-	/**
-	 * @return Arceau\Controllers\RootController
-	 */
-	 public static function getRootController() {
-	 	return MoufManager::getMoufManager()->get('rootController');
 	 }
 
 	/**

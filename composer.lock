@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c4fd25f09949a42f19e142bfd3097f2d",
-    "content-hash": "14def8ec30b7f1bde77a2948fc2a0099",
+    "hash": "bc76a70f341144ec31e61fcf750484fd",
+    "content-hash": "9666b154036866d319a51f4d3101f460",
     "packages": [
         {
             "name": "components/bootstrap",
@@ -2447,6 +2447,68 @@
                 "splash"
             ],
             "time": "2015-06-26 08:37:47"
+        },
+        {
+            "name": "mouf/security.simplelogincontroller",
+            "version": "3.1.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thecodingmachine/security.simplelogincontroller.git",
+                "reference": "5dde5274f74a96a262c40dd8125ecddc16756824"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thecodingmachine/security.simplelogincontroller/zipball/5dde5274f74a96a262c40dd8125ecddc16756824",
+                "reference": "5dde5274f74a96a262c40dd8125ecddc16756824",
+                "shasum": ""
+            },
+            "require": {
+                "mouf/html.widgets.messageservice": "~3.0",
+                "mouf/security.userservice": "2.*",
+                "mouf/utils.action.action-interface": "~1.0",
+                "php": ">=5.3.0"
+            },
+            "type": "mouf-library",
+            "extra": {
+                "mouf": {
+                    "install": [
+                        {
+                            "type": "class",
+                            "class": "Mouf\\Security\\SimpleLoginInstaller"
+                        }
+                    ],
+                    "doc": [
+                        {
+                            "title": "Intergrate the UserService.RememberMe feature",
+                            "url": "doc/integrate_remember_me.md"
+                        }
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Mouf": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David Négrier",
+                    "email": "d.negrier@thecodingmachine.com",
+                    "homepage": "http://mouf-php.com"
+                }
+            ],
+            "description": "This package contains a simple Splash controller to log into an application. The controller can display a simple form with username/password choice, and has actions to login/logout the application.",
+            "homepage": "https://github.com/thecodingmachine/security.simplelogincontroller",
+            "keywords": [
+                "login",
+                "mouf",
+                "security"
+            ],
+            "time": "2015-07-24 07:42:43"
         },
         {
             "name": "mouf/security.userservice",

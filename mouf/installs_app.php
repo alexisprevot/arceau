@@ -141,74 +141,81 @@ return array (
   19 => 
   array (
     'status' => 'done',
+    'type' => 'class',
+    'class' => 'Mouf\\Security\\SimpleLoginInstaller',
+    'package' => 'mouf/security.simplelogincontroller',
+  ),
+  20 => 
+  array (
+    'status' => 'done',
     'type' => 'file',
     'file' => 'src/install.php',
     'package' => 'mouf/security.rightsservice',
   ),
-  20 => 
+  21 => 
   array (
     'status' => 'done',
     'type' => 'class',
     'class' => 'Mouf\\Console\\ConsoleInstaller',
     'package' => 'mouf/utils.console',
   ),
-  21 => 
+  22 => 
   array (
     'status' => 'done',
     'type' => 'class',
     'class' => 'Mouf\\Utils\\Patcher\\PatchInstaller',
     'package' => 'mouf/utils.patcher',
   ),
-  22 => 
+  23 => 
   array (
     'status' => 'done',
     'type' => 'url',
     'url' => 'dbconnectioninstall/',
     'package' => 'mouf/database.dbconnection',
   ),
-  23 => 
+  24 => 
   array (
     'status' => 'done',
     'type' => 'file',
     'file' => 'src/install.php',
     'package' => 'mouf/database.patcher',
   ),
-  24 => 
+  25 => 
   array (
     'status' => 'done',
     'type' => 'url',
     'url' => 'dbalconnectioninstall/',
     'package' => 'mouf/database.doctrine-dbal-wrapper',
   ),
-  25 => 
+  26 => 
   array (
     'status' => 'done',
     'type' => 'class',
     'class' => 'Mouf\\Utils\\Common\\Doctrine\\Cache\\CacheInstaller',
     'package' => 'mouf/utils.common.doctrine-cache-wrapper',
   ),
-  26 => 
+  27 => 
   array (
     'status' => 'done',
     'type' => 'class',
     'class' => 'Mouf\\Utils\\Common\\Doctrine\\Annotations\\AnnotationReaderInstaller',
     'package' => 'mouf/utils.common.doctrine-annotations-wrapper',
   ),
-  27 => 
+  28 => 
   array (
     'status' => 'done',
     'type' => 'url',
     'url' => 'entityManagerInstall/?installMode=1',
     'package' => 'mouf/database.doctrine-orm-wrapper',
   ),
-  28 => 
+  29 => 
   array (
     'status' => 'done',
     'type' => 'file',
     'file' => 'install.php',
     'package' => 'mouf/html.utils.ckeditor',
   ),
-  29 => 
+  30 => 
   array (
     'status' => 'done',
     'type' => 'file',

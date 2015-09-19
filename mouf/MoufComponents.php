@@ -72,6 +72,7 @@ $moufManager->setAllVariables(array (
   array (
     0 => 'vendor',
   ),
+  'doctrine_entityManager_generatePatch' => false,
 ));
 
 $moufManager->addComponentInstances(array (
@@ -431,6 +432,24 @@ return new \\Doctrine\\Common\\Annotations\\CachedReader($reader, $container->ge
       'setDefaultRenderer' => 'defaultRenderer',
     ),
   ),
+  'clientDao' => 
+  array (
+    'class' => 'Arceau\\Model\\DAOs\\ClientDao',
+    'external' => false,
+    'weak' => false,
+    'constructor' => 
+    array (
+      0 => 
+      array (
+        'value' => 'entityManager',
+        'parametertype' => 'object',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+    ),
+  ),
   'component.bootstrap' => 
   array (
     'class' => 'Mouf\\Html\\Utils\\WebLibraryManager\\WebLibrary',
@@ -530,6 +549,24 @@ return new \\Doctrine\\Common\\Annotations\\CachedReader($reader, $container->ge
         21 => '__anonymous__ad9b_2021859385',
         22 => '__anonymous__ad9b_38224610',
         23 => '__anonymous__ad9b_1362371042',
+      ),
+    ),
+  ),
+  'cotisationDao' => 
+  array (
+    'class' => 'Arceau\\Model\\DAOs\\CotisationDao',
+    'external' => false,
+    'weak' => false,
+    'constructor' => 
+    array (
+      0 => 
+      array (
+        'value' => 'entityManager',
+        'parametertype' => 'object',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
       ),
     ),
   ),
@@ -1763,6 +1800,24 @@ return $dbalConnection;',
     'external' => false,
     'weak' => false,
   ),
+  'userDao' => 
+  array (
+    'class' => 'Arceau\\Model\\DAOs\\UserDao',
+    'external' => false,
+    'weak' => false,
+    'constructor' => 
+    array (
+      0 => 
+      array (
+        'value' => 'entityManager',
+        'parametertype' => 'object',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+    ),
+  ),
   'userMessageService' => 
   array (
     'class' => 'Mouf\\Html\\Widgets\\MessageService\\Service\\SessionMessageService',
@@ -2007,6 +2062,13 @@ return $dbalConnection;
 	 }
 
 	/**
+	 * @return Arceau\Model\DAOs\ClientDao
+	 */
+	 public static function getClientDao() {
+	 	return MoufManager::getMoufManager()->get('clientDao');
+	 }
+
+	/**
 	 * @return Mouf\Html\Utils\WebLibraryManager\WebLibrary
 	 */
 	 public static function getComponent_bootstrap() {
@@ -2025,6 +2087,13 @@ return $dbalConnection;
 	 */
 	 public static function getConsole() {
 	 	return MoufManager::getMoufManager()->get('console');
+	 }
+
+	/**
+	 * @return Arceau\Model\DAOs\CotisationDao
+	 */
+	 public static function getCotisationDao() {
+	 	return MoufManager::getMoufManager()->get('cotisationDao');
 	 }
 
 	/**
@@ -2424,6 +2493,13 @@ return $dbalConnection;
 	 */
 	 public static function getUnderscoreNamingStrategy() {
 	 	return MoufManager::getMoufManager()->get('underscoreNamingStrategy');
+	 }
+
+	/**
+	 * @return Arceau\Model\DAOs\UserDao
+	 */
+	 public static function getUserDao() {
+	 	return MoufManager::getMoufManager()->get('userDao');
 	 }
 
 	/**

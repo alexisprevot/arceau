@@ -51,7 +51,11 @@ class RootController extends Controller {
         // TODO: write content of action here
 
         // Let's add the twig file to the template.
-        $this->content->addHtmlElement(new TwigTemplate($this->twig, 'views/root/index.twig', array("message"=>"world")));
+        $this->content->addHtmlElement(new TwigTemplate($this->twig, 'views/root/index.twig',
+            array(
+                "message"=>"world"
+            )
+        ));
 
         return new HtmlResponse($this->template);
     }

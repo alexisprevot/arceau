@@ -5,7 +5,8 @@
         }
     },
     "require": {
-        "mouf/mouf": "~2.0",
+	"twig/twig": "~1.21",
+	"mouf/mouf": "~2.0",
         "mouf/mvc.splash": "~5.1",
         "mouf/mvc.splash-common": "~5.1",
         "mouf/security.userservice-splash": "~4.0",

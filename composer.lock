@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "699bcb897229b401442094b28ea913e6",
-    "content-hash": "43f13094f36384296347cc11e305d7f4",
+    "hash": "4a9104bb0f127c0f71bbc7eb4a4f9419",
+    "content-hash": "66ef85d9e99359e31dce33927af36b49",
     "packages": [
         {
             "name": "components/bootstrap",
@@ -423,16 +423,16 @@
         },
         {
             "name": "doctrine/dbal",
-            "version": "v2.5.1",
+            "version": "v2.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "628c2256b646ae2417d44e063bce8aec5199d48d"
+                "reference": "01dbcbc5cd0a913d751418e635434a18a2f2a75c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/628c2256b646ae2417d44e063bce8aec5199d48d",
-                "reference": "628c2256b646ae2417d44e063bce8aec5199d48d",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/01dbcbc5cd0a913d751418e635434a18a2f2a75c",
+                "reference": "01dbcbc5cd0a913d751418e635434a18a2f2a75c",
                 "shasum": ""
             },
             "require": {
@@ -490,7 +490,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2015-01-12 21:52:47"
+            "time": "2015-09-16 16:29:33"
         },
         {
             "name": "doctrine/inflector",
@@ -1020,12 +1020,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thecodingmachine/database.doctrine-dbal-wrapper.git",
-                "reference": "29d303afff52dec0477a12c2b1e62e61cc54481c"
+                "reference": "0d4ba029c08d223f63139d680ff17ce1778d09d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thecodingmachine/database.doctrine-dbal-wrapper/zipball/29d303afff52dec0477a12c2b1e62e61cc54481c",
-                "reference": "29d303afff52dec0477a12c2b1e62e61cc54481c",
+                "url": "https://api.github.com/repos/thecodingmachine/database.doctrine-dbal-wrapper/zipball/0d4ba029c08d223f63139d680ff17ce1778d09d5",
+                "reference": "0d4ba029c08d223f63139d680ff17ce1778d09d5",
                 "shasum": ""
             },
             "require": {
@@ -1063,7 +1063,7 @@
             ],
             "authors": [
                 {
-                    "name": "Kevin Nguyen",
+                    "name": "Kévin Nguyen",
                     "email": "k.nguyen@thecodingmachine.com",
                     "homepage": "http://mouf-php.com"
                 }
@@ -1075,7 +1075,7 @@
                 "dbconnection",
                 "mouf"
             ],
-            "time": "2015-05-19 11:59:38"
+            "time": "2015-09-17 15:41:00"
         },
         {
             "name": "mouf/database.doctrine-orm-wrapper",
@@ -1357,16 +1357,16 @@
         },
         {
             "name": "mouf/html.renderer.twig-extensions",
-            "version": "v1.0.5",
+            "version": "v1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thecodingmachine/html.renderer.twig-extensions.git",
-                "reference": "27540c00b468eb9e879990d70c611d5f7823409b"
+                "reference": "6e528063bc0298a2e45faddca291e90a67cb565b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thecodingmachine/html.renderer.twig-extensions/zipball/27540c00b468eb9e879990d70c611d5f7823409b",
-                "reference": "27540c00b468eb9e879990d70c611d5f7823409b",
+                "url": "https://api.github.com/repos/thecodingmachine/html.renderer.twig-extensions/zipball/6e528063bc0298a2e45faddca291e90a67cb565b",
+                "reference": "6e528063bc0298a2e45faddca291e90a67cb565b",
                 "shasum": ""
             },
             "require": {
@@ -1418,7 +1418,7 @@
                 "render",
                 "tohtml"
             ],
-            "time": "2015-04-14 16:29:54"
+            "time": "2015-09-18 15:41:13"
         },
         {
             "name": "mouf/html.template.bootstrap",
@@ -2221,16 +2221,16 @@
         },
         {
             "name": "mouf/mvc.splash-common",
-            "version": "v5.1.3",
+            "version": "v5.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thecodingmachine/mvc.splash-common.git",
-                "reference": "fba7b248e788c6521391d2d08dce8a682ee113b1"
+                "reference": "b7879c8707e3a0bde40505ab8e054c5c5184b0e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thecodingmachine/mvc.splash-common/zipball/fba7b248e788c6521391d2d08dce8a682ee113b1",
-                "reference": "fba7b248e788c6521391d2d08dce8a682ee113b1",
+                "url": "https://api.github.com/repos/thecodingmachine/mvc.splash-common/zipball/b7879c8707e3a0bde40505ab8e054c5c5184b0e3",
+                "reference": "b7879c8707e3a0bde40505ab8e054c5c5184b0e3",
                 "shasum": ""
             },
             "require": {
@@ -2289,20 +2289,20 @@
                 "splash",
                 "splash-common"
             ],
-            "time": "2015-08-07 18:44:50"
+            "time": "2015-09-15 12:33:17"
         },
         {
             "name": "mouf/nodejs-installer",
-            "version": "v1.0.7",
+            "version": "v1.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thecodingmachine/nodejs-installer.git",
-                "reference": "a87e3151b549ce0b7c8e1ac17ae509214faf95b1"
+                "reference": "dbc3b2990b0c788dc5debb3deb14481da65c165d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thecodingmachine/nodejs-installer/zipball/a87e3151b549ce0b7c8e1ac17ae509214faf95b1",
-                "reference": "a87e3151b549ce0b7c8e1ac17ae509214faf95b1",
+                "url": "https://api.github.com/repos/thecodingmachine/nodejs-installer/zipball/dbc3b2990b0c788dc5debb3deb14481da65c165d",
+                "reference": "dbc3b2990b0c788dc5debb3deb14481da65c165d",
                 "shasum": ""
             },
             "require": {
@@ -2345,7 +2345,7 @@
                 "nodejs",
                 "npm"
             ],
-            "time": "2015-09-10 09:50:55"
+            "time": "2015-09-16 08:02:27"
         },
         {
             "name": "mouf/security.rightsservice",
@@ -3199,12 +3199,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thecodingmachine/utils.composite-exception.git",
-                "reference": "44ae99c6fd40f22e669680a1b5ea7961a05f7702"
+                "reference": "f887828a2730e9591e73b0d533c0b4f3b5c5872c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thecodingmachine/utils.composite-exception/zipball/44ae99c6fd40f22e669680a1b5ea7961a05f7702",
-                "reference": "44ae99c6fd40f22e669680a1b5ea7961a05f7702",
+                "url": "https://api.github.com/repos/thecodingmachine/utils.composite-exception/zipball/f887828a2730e9591e73b0d533c0b4f3b5c5872c",
+                "reference": "f887828a2730e9591e73b0d533c0b4f3b5c5872c",
                 "shasum": ""
             },
             "require-dev": {
@@ -3222,7 +3222,7 @@
                 "MIT"
             ],
             "description": "This project contains a simple PHP exception that can aggregate multiple exceptions in one.",
-            "time": "2015-09-08 15:11:39"
+            "time": "2015-09-18 15:40:51"
         },
         {
             "name": "mouf/utils.console",

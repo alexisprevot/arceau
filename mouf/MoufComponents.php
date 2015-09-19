@@ -1728,6 +1728,9 @@ return $dbalConnection;',
         1 => 'twigDebugExtension',
       ),
     ),
+    'setterProperties' => 
+    array (
+    ),
   ),
   'uRLValidatorFtpHttps' => 
   array (

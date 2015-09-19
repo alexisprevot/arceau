@@ -25,6 +25,8 @@ use Arceau\Model\Entities\User;
  * @method User findOneByNom($fieldValue, $orderBy = null)
  * @method User findByPrenom($fieldValue, $orderBy = null, $limit = null, $offset = null)
  * @method User findOneByPrenom($fieldValue, $orderBy = null)
+ * @method User findByRightId($fieldValue, $orderBy = null, $limit = null, $offset = null)
+ * @method User findOneByRightId($fieldValue, $orderBy = null)
 
  */
 class UserBaseDao extends EntityRepository implements DAOInterface
@@ -157,5 +159,17 @@ class UserBaseDao extends EntityRepository implements DAOInterface
     public function findUniqueByPrenom($fieldValue)
     {
         return $this->findUniqueBy(array('prenom' => $fieldValue));
+    }
+    /**
+     * Finds only one entity by RightId.
+     * Throw an exception if more than one entity was found.
+     *
+     * @param mixed $fieldValue the value of the filtered field
+     *
+     * @return User
+     */
+    public function findUniqueByRightId($fieldValue)
+    {
+        return $this->findUniqueBy(array('right_id' => $fieldValue));
     }
 }

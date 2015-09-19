@@ -14,6 +14,7 @@
         "mouf/security.userservice-splash": "4.0.1",
         "mouf/security.rightsservice-splash": "~4.0",
         "mouf/utils.patcher": "~1.0",
+        "mouf/html.renderer": "~1.1",
         "mouf/database.patcher": "~1.0",
         "koala-framework/composer-extra-assets": "~1.1",
         "mouf/database.doctrine-orm-wrapper": "~1.0",

@@ -92,6 +92,6 @@ class IndexController extends Controller {
                 "prenom" => $user->getPrenom()
             )
         ));
-        return new HtmlResponse($this->template);
+        $this->template->toHtml();
     }
 }

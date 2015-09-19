@@ -387,6 +387,30 @@ return new \\Doctrine\\Common\\Annotations\\CachedReader($reader, $container->ge
     'external' => false,
     'weak' => false,
   ),
+  'bodyTemplate' => 
+  array (
+    'class' => 'Arceau\\Template\\BodyTemplate',
+    'external' => false,
+    'weak' => false,
+    'setterProperties' => 
+    array (
+      'setTitle' => 
+      array (
+        'value' => 'Arceau - Gestion',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+    ),
+    'setterBinds' => 
+    array (
+      'setWebLibraryManager' => 'defaultWebLibraryManager',
+      'setHeader' => 'headerTemplate',
+      'setFooter' => 'footerTemplate',
+      'setContent' => 'contentTemplate',
+    ),
+  ),
   'bootstrapRenderer' => 
   array (
     'class' => 'Mouf\\Html\\Renderer\\FileBasedRenderer',
@@ -568,6 +592,12 @@ return new \\Doctrine\\Common\\Annotations\\CachedReader($reader, $container->ge
         23 => '__anonymous__ad9b_1362371042',
       ),
     ),
+  ),
+  'contentTemplate' => 
+  array (
+    'class' => 'Arceau\\Template\\ContentTemplate',
+    'external' => false,
+    'weak' => false,
   ),
   'cotisationDao' => 
   array (
@@ -866,8 +896,9 @@ return $driver;
         0 => 'rootUrlInlineWebLibrary',
         1 => 'messageServiceLibrary',
         2 => 'component.jquery',
-        3 => 'component.bootstrap',
-        4 => 'javascript.ckeditor',
+        3 => 'materializecss',
+        4 => 'styleCss',
+        5 => 'javascript.ckeditor',
       ),
     ),
     'constructor' => 
@@ -881,6 +912,9 @@ return $driver;
         array (
         ),
       ),
+    ),
+    'setterProperties' => 
+    array (
     ),
   ),
   'doctrineApcCache' => 
@@ -1133,6 +1167,40 @@ return $dbalConnection;',
       ),
     ),
   ),
+  'footerTemplate' => 
+  array (
+    'class' => 'Arceau\\Template\\FooterTemplate',
+    'external' => false,
+    'weak' => false,
+    'setterProperties' => 
+    array (
+      'setCopyright' => 
+      array (
+        'value' => '2015 - PREVOT Alexis',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+    ),
+  ),
+  'headerTemplate' => 
+  array (
+    'class' => 'Arceau\\Template\\HeaderTemplate',
+    'external' => false,
+    'weak' => false,
+    'setterProperties' => 
+    array (
+      'setTitle' => 
+      array (
+        'value' => 'Arceau Gestion',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+    ),
+  ),
   'helperSet' => 
   array (
     'class' => 'Mouf\\Console\\HelperSet',
@@ -1195,7 +1263,7 @@ return $dbalConnection;',
       ),
       1 => 
       array (
-        'value' => 'bootstrapTemplate',
+        'value' => 'bodyTemplate',
         'parametertype' => 'object',
         'type' => 'string',
         'metadata' => 
@@ -1338,6 +1406,39 @@ return $dbalConnection;',
     'setterBinds' => 
     array (
       'setDefaultDriver' => 'defaultMappingDriver',
+    ),
+  ),
+  'materializecss' => 
+  array (
+    'class' => 'Mouf\\Html\\Utils\\WebLibraryManager\\WebLibrary',
+    'external' => false,
+    'weak' => false,
+    'constructor' => 
+    array (
+      0 => 
+      array (
+        'value' => 
+        array (
+          0 => 'node_modules/materialize-css/bin/materialize.js',
+        ),
+        'parametertype' => 'primitive',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      1 => 
+      array (
+        'value' => 
+        array (
+          0 => 'node_modules/materialize-css/bin/materialize.css',
+        ),
+        'parametertype' => 'primitive',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
     ),
   ),
   'messageServiceLibrary' => 
@@ -1922,6 +2023,37 @@ return $dbalConnection;',
       'setLanguageDetection' => 'splashBrowserLanguageDetection',
     ),
   ),
+  'styleCss' => 
+  array (
+    'class' => 'Mouf\\Html\\Utils\\WebLibraryManager\\WebLibrary',
+    'external' => false,
+    'weak' => false,
+    'constructor' => 
+    array (
+      0 => 
+      array (
+        'value' => NULL,
+        'parametertype' => 'primitive',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      1 => 
+      array (
+        'value' => 
+        array (
+          0 => 'public/css/style.css',
+          1 => 'http://fonts.googleapis.com/icon?family=Material+Icons',
+        ),
+        'parametertype' => 'primitive',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+    ),
+  ),
   'twigDebugExtension' => 
   array (
     'class' => 'Twig_Extension_Debug',
@@ -2233,6 +2365,13 @@ return $dbalConnection;
 	 }
 
 	/**
+	 * @return Arceau\Template\BodyTemplate
+	 */
+	 public static function getBodyTemplate() {
+	 	return MoufManager::getMoufManager()->get('bodyTemplate');
+	 }
+
+	/**
 	 * @return Mouf\Html\Renderer\FileBasedRenderer
 	 */
 	 public static function getBootstrapRenderer() {
@@ -2272,6 +2411,13 @@ return $dbalConnection;
 	 */
 	 public static function getConsole() {
 	 	return MoufManager::getMoufManager()->get('console');
+	 }
+
+	/**
+	 * @return Arceau\Template\ContentTemplate
+	 */
+	 public static function getContentTemplate() {
+	 	return MoufManager::getMoufManager()->get('contentTemplate');
 	 }
 
 	/**
@@ -2443,6 +2589,20 @@ return $dbalConnection;
 	 }
 
 	/**
+	 * @return Arceau\Template\FooterTemplate
+	 */
+	 public static function getFooterTemplate() {
+	 	return MoufManager::getMoufManager()->get('footerTemplate');
+	 }
+
+	/**
+	 * @return Arceau\Template\HeaderTemplate
+	 */
+	 public static function getHeaderTemplate() {
+	 	return MoufManager::getMoufManager()->get('headerTemplate');
+	 }
+
+	/**
 	 * @return Mouf\Console\HelperSet
 	 */
 	 public static function getHelperSet() {
@@ -2482,6 +2642,13 @@ return $dbalConnection;
 	 */
 	 public static function getMappingDriverChain() {
 	 	return MoufManager::getMoufManager()->get('mappingDriverChain');
+	 }
+
+	/**
+	 * @return Mouf\Html\Utils\WebLibraryManager\WebLibrary
+	 */
+	 public static function getMaterializecss() {
+	 	return MoufManager::getMoufManager()->get('materializecss');
 	 }
 
 	/**
@@ -2671,6 +2838,13 @@ return $dbalConnection;
 	 */
 	 public static function getSplashTranslateService() {
 	 	return MoufManager::getMoufManager()->get('splashTranslateService');
+	 }
+
+	/**
+	 * @return Mouf\Html\Utils\WebLibraryManager\WebLibrary
+	 */
+	 public static function getStyleCss() {
+	 	return MoufManager::getMoufManager()->get('styleCss');
 	 }
 
 	/**

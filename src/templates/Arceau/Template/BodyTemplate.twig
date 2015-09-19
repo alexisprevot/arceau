@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ this.title }}</title>
+    {{ this.webLibraryManager.toHtml() }}
+</head>
+<body>
+<header class="light-blue darken-3">
+    {{ this.header.toHtml() }}
+</header>
+
+<main>
+    <div class="container">
+        {{ this.content.toHtml() }}
+    </div>
+</main>
+
+<!-- /container -->
+<footer class="page-footer light-blue darken-3">
+    {{ this.footer.toHtml() }}
+</footer>
+</body>
+</html>

@@ -408,7 +408,7 @@ return new \\Doctrine\\Common\\Annotations\\CachedReader($reader, $container->ge
       'setWebLibraryManager' => 'defaultWebLibraryManager',
       'setHeader' => 'headerTemplate',
       'setFooter' => 'footerTemplate',
-      'setContent' => 'contentTemplate',
+      'setContent' => 'block.content',
     ),
   ),
   'bootstrapRenderer' => 

@@ -9,6 +9,7 @@ use Mouf\Html\Template\TemplateInterface;
 use Mouf\Html\HtmlElement\HtmlBlock;
 use Mouf\Security\UserService\UserService;
 use Psr\Log\LoggerInterface;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use \Twig_Environment;
 use Mouf\Html\Renderer\Twig\TwigTemplate;
 use Mouf\Mvc\Splash\HtmlResponse;
@@ -84,14 +85,25 @@ class IndexController extends Controller {
      * @URL /
      */
     public function index() {
+        $root = ROOT_URL;
         /** @var User $user */
         $user = $this->userService->getLoggedUser();
 
         $this->content->addHtmlElement(new TwigTemplate($this->twig, 'views/index/index.twig',
             array(
-                "prenom" => $user->getPrenom()
+                "prenom"    => $user->getPrenom(),
+                "RootUrl"   => $root
             )
         ));
         $this->template->toHtml();
+    }
+
+    /**
+     * @Logged
+     * @URL /disconnect
+     */
+    public function disconnect() {
+        \Mouf::getSessionManager()->destroy();
+        header('Location:' . ROOT_URL);
     }
 }

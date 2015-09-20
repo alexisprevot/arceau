@@ -2,6 +2,7 @@
 
 namespace Arceau\Template;
 
+use Arceau\Model\Entities\User;
 use Mouf\Html\HtmlElement\HtmlElementInterface;
 use Mouf\Html\Renderer\Renderable;
 use Mouf\Html\Template\TemplateInterface;

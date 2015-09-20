@@ -4,6 +4,7 @@ namespace Arceau\Template;
 
 use Mouf\Html\Renderer\Renderable;
 use Mouf\Html\HtmlElement\HtmlElementInterface;
+use Mouf\Security\UserService\UserService;
 
 /**
  * Template class for Arceau.
@@ -21,6 +22,18 @@ class HeaderTemplate implements HtmlElementInterface
      * @var string
      */
     protected $logo;
+
+    /**
+     * @var UserService
+     */
+    protected $userService;
+
+    /**
+     * @param UserService $userService
+     */
+    public function __construct(UserService $userService) {
+        $this->userService = $userService;
+    }
 
     /**
      * @return string
@@ -68,5 +81,13 @@ class HeaderTemplate implements HtmlElementInterface
     public function setTitle($title)
     {
         $this->title = $title;
+    }
+
+    /**
+     * @return \Mouf\Security\UserService\UserInterface|null
+     */
+    public function getUser()
+    {
+        return $this->userService->getLoggedUser();
     }
 }

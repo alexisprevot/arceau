@@ -593,12 +593,6 @@ return new \\Doctrine\\Common\\Annotations\\CachedReader($reader, $container->ge
       ),
     ),
   ),
-  'contentTemplate' => 
-  array (
-    'class' => 'Arceau\\Template\\ContentTemplate',
-    'external' => false,
-    'weak' => false,
-  ),
   'cotisationDao' => 
   array (
     'class' => 'Arceau\\Model\\DAOs\\CotisationDao',
@@ -1194,6 +1188,18 @@ return $dbalConnection;',
       'setTitle' => 
       array (
         'value' => 'Arceau Gestion',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+    ),
+    'constructor' => 
+    array (
+      0 => 
+      array (
+        'value' => 'userService',
+        'parametertype' => 'object',
         'type' => 'string',
         'metadata' => 
         array (
@@ -2411,13 +2417,6 @@ return $dbalConnection;
 	 */
 	 public static function getConsole() {
 	 	return MoufManager::getMoufManager()->get('console');
-	 }
-
-	/**
-	 * @return Arceau\Template\ContentTemplate
-	 */
-	 public static function getContentTemplate() {
-	 	return MoufManager::getMoufManager()->get('contentTemplate');
 	 }
 
 	/**

@@ -99,6 +99,28 @@ class IndexController extends Controller {
     }
 
     /**
+     * This page is for add a client to the database
+     *
+     * @Logged
+     * @URL /add_client
+     */
+    public function add_client() {
+        $this->content->addHtmlElement(new TwigTemplate($this->twig, 'views/client/client.twig', array()));
+        $this->template->toHtml();
+    }
+
+    /**
+     * This page is a list of client
+     *
+     * @Logged
+     * @URL /list_client
+     */
+    public function list_client() {
+        $this->content->addHtmlElement(new TwigTemplate($this->twig, 'views/list_client/list_client.twig', array()));
+        $this->template->toHtml();
+    }
+
+    /**
      * @Logged
      * @URL /disconnect
      */

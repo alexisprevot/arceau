@@ -79,27 +79,18 @@ class IndexController extends Controller {
     }
 
     /**
-     * This is the default login page
+     * This is the default login page.
      *
      * @Logged
      * @URL /
      */
     public function index() {
-        $root = ROOT_URL;
-        /** @var User $user */
-        $user = $this->userService->getLoggedUser();
-
-        $this->content->addHtmlElement(new TwigTemplate($this->twig, 'views/index/index.twig',
-            array(
-                "prenom"    => $user->getPrenom(),
-                "RootUrl"   => $root
-            )
-        ));
+        $this->content->addHtmlElement(new TwigTemplate($this->twig, 'views/index/index.twig', array()));
         $this->template->toHtml();
     }
 
     /**
-     * This page is for add a client to the database
+     * This page is for add a client to the database.
      *
      * @Logged
      * @URL /add_client
@@ -110,7 +101,7 @@ class IndexController extends Controller {
     }
 
     /**
-     * This page is a list of client
+     * This page is a list of client.
      *
      * @Logged
      * @URL /list_client
@@ -121,6 +112,36 @@ class IndexController extends Controller {
     }
 
     /**
+     * This page is for a user profil.
+     *
+     * @Logged
+     * @URL /profil
+     */
+    public function profil() {
+        $user = $this->userService->getLoggedUser();
+
+        $this->content->addHtmlElement(new TwigTemplate($this->twig, 'views/profil/profil.twig',
+            array(
+                'user'      => $user
+            )
+        ));
+        $this->template->toHtml();
+    }
+
+    /**
+     * This function get the form.
+     *
+     * @Logged
+     * @URL /get-form
+     */
+    public function submit_form() {
+        echo "test";
+        // TODO : GET FORM INFO
+    }
+
+    /**
+     * Session destroy.
+     *
      * @Logged
      * @URL /disconnect
      */

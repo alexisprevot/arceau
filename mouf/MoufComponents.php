@@ -83,6 +83,35 @@ $moufManager->addComponentInstances(array (
     'anonymous' => true,
     'weak' => true,
   ),
+  '__anonymous__a02c_762453_1442946031342' => 
+  array (
+    'class' => 'Mouf\\Html\\Utils\\WebLibraryManager\\WebLibraryManager',
+    'external' => false,
+    'weak' => true,
+    'anonymous' => true,
+    'constructor' => 
+    array (
+      0 => 
+      array (
+        'value' => 'defaultRenderer',
+        'parametertype' => 'object',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+    ),
+    'setterProperties' => 
+    array (
+    ),
+    'setterBinds' => 
+    array (
+      'setWebLibraries' => 
+      array (
+        0 => 'loginLibrary',
+      ),
+    ),
+  ),
   '__anonymous__ad9b_112948783' => 
   array (
     'class' => 'Doctrine\\ORM\\Tools\\Console\\Command\\ClearCache\\QueryCommand',
@@ -893,6 +922,7 @@ return $driver;
         3 => 'materializecss',
         4 => 'styleCss',
         5 => 'javascript.ckeditor',
+        6 => 'indexLoginJS',
       ),
     ),
     'constructor' => 
@@ -1323,6 +1353,27 @@ return $dbalConnection;',
       ),
     ),
   ),
+  'indexLoginJS' => 
+  array (
+    'class' => 'Mouf\\Html\\Utils\\WebLibraryManager\\WebLibrary',
+    'external' => false,
+    'weak' => false,
+    'constructor' => 
+    array (
+      0 => 
+      array (
+        'value' => 
+        array (
+          0 => 'public/js/index-login.js',
+        ),
+        'parametertype' => 'primitive',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+    ),
+  ),
   'javascript.ckeditor' => 
   array (
     'class' => 'Mouf\\Html\\Utils\\WebLibraryManager\\WebLibrary',
@@ -1362,11 +1413,11 @@ return $dbalConnection;',
     'weak' => false,
     'fieldBinds' => 
     array (
-      'template' => 'bootstrapTemplate',
       'userService' => 'userService',
       'simpleLoginView' => '__anonymous__61bc_1625135474',
       'messageService' => 'userMessageService',
       'contentBlock' => 'block.content',
+      'template' => 'loginTemplate',
     ),
     'fieldProperties' => 
     array (
@@ -1402,6 +1453,56 @@ return $dbalConnection;',
         array (
         ),
       ),
+    ),
+  ),
+  'loginLibrary' => 
+  array (
+    'class' => 'Mouf\\Html\\Utils\\WebLibraryManager\\WebLibrary',
+    'external' => false,
+    'weak' => false,
+    'constructor' => 
+    array (
+      0 => 
+      array (
+        'value' => NULL,
+        'parametertype' => 'primitive',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      1 => 
+      array (
+        'value' => 
+        array (
+          0 => 'public/css/login.css',
+        ),
+        'parametertype' => 'primitive',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+    ),
+  ),
+  'loginTemplate' => 
+  array (
+    'class' => 'Mouf\\Html\\Template\\BootstrapTemplate',
+    'external' => false,
+    'weak' => false,
+    'setterProperties' => 
+    array (
+    ),
+    'setterBinds' => 
+    array (
+      'setContent' => 'block.content',
+      'setWebLibraryManager' => '__anonymous__a02c_762453_1442946031342',
+      'setDefaultRenderer' => 'defaultRenderer',
+      'setLeft' => 'block.left',
+      'setRight' => 'block.right',
+      'setHeader' => 'block.header',
+      'setFooter' => 'block.footer',
+      'setTemplateRenderer' => 'bootstrapRenderer',
     ),
   ),
   'mappingDriverChain' => 
@@ -1864,7 +1965,6 @@ return $dbalConnection;',
     'fieldBinds' => 
     array (
       'userService' => 'userService',
-      'rightsDao' => 'rightDao',
     ),
     'fieldProperties' => 
     array (
@@ -1910,6 +2010,9 @@ return $dbalConnection;',
   array (
     'class' => 'Mouf\\Utils\\Session\\SessionManager\\DefaultSessionManager',
     'external' => false,
+    'fieldProperties' => 
+    array (
+    ),
   ),
   'splash' => 
   array (
@@ -2150,10 +2253,6 @@ return $dbalConnection;',
     'fieldBinds' => 
     array (
       'sessionManager' => 'sessionManager',
-      'authenticationListeners' => 
-      array (
-        0 => 'rightsService',
-      ),
       'userDao' => 'userDao',
       'log' => 'psr.errorLogLogger',
     ),
@@ -2625,6 +2724,13 @@ return $dbalConnection;
 	/**
 	 * @return Mouf\Html\Utils\WebLibraryManager\WebLibrary
 	 */
+	 public static function getIndexLoginJS() {
+	 	return MoufManager::getMoufManager()->get('indexLoginJS');
+	 }
+
+	/**
+	 * @return Mouf\Html\Utils\WebLibraryManager\WebLibrary
+	 */
 	 public static function getJavascript_ckeditor() {
 	 	return MoufManager::getMoufManager()->get('javascript.ckeditor');
 	 }
@@ -2634,6 +2740,20 @@ return $dbalConnection;
 	 */
 	 public static function getLogin() {
 	 	return MoufManager::getMoufManager()->get('login');
+	 }
+
+	/**
+	 * @return Mouf\Html\Utils\WebLibraryManager\WebLibrary
+	 */
+	 public static function getLoginLibrary() {
+	 	return MoufManager::getMoufManager()->get('loginLibrary');
+	 }
+
+	/**
+	 * @return Mouf\Html\Template\BootstrapTemplate
+	 */
+	 public static function getLoginTemplate() {
+	 	return MoufManager::getMoufManager()->get('loginTemplate');
 	 }
 
 	/**

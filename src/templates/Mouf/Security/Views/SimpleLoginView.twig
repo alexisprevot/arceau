@@ -1,0 +1,25 @@
+<div class="wrapper">
+	<div class="container">
+		<h1>Welcome</h1>
+
+        <form class="form-signin" action="login" method="post">
+            <input type='hidden' name='redirect' value='{{ this.redirecturl }}' />
+            <input name="login" type="text" class="input-block-level form-control" placeholder="{{ this.loginLabel }}" value="{{ this.login }}">
+            <input name="password" type="password" class="input-block-level form-control" placeholder="{{ this.passwordLabel }}">
+            <button class="btn btn-large btn-primary" type="submit">{{ this.loginSubmitLabel }}</button>
+        </form>
+	</div>
+
+	<ul class="bg-bubbles">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</div>

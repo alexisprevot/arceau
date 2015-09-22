@@ -8,3 +8,155 @@ body {
 main {
     flex: 1 0 auto;
 }
+
+label {
+    color: #4A6B8A;
+}
+
+.hr {
+    border-bottom: 3px solid #133353;
+}
+/**************************************************************/
+/** COLOR OF SITE **/
+
+.blue-light-1 {
+    color: #728CA6 !important;
+}
+
+.blue-light-2 {
+    color: #4A6B8A !important;
+}
+
+.blue-normal {
+    color: #2A4D6E !important;
+}
+
+.blue-dark-1 {
+    color: #133353 !important;
+}
+
+.blue-dark-2 {
+    color: #041E37 !important;
+}
+
+.bg-blue-light-1 {
+    background-color: #728CA6 !important;
+}
+
+.bg-blue-light-2 {
+    background-color: #4A6B8A !important;
+}
+
+.bg-blue-normal {
+    background-color: #2A4D6E !important;
+}
+
+.bg-blue-dark-1 {
+    background-color: #133353 !important;
+}
+
+.bg-blue-dark-2 {
+    background-color: #041E37 !important;
+}
+
+/** END COLOR OF SITE **/
+/**************************************************************/
+/** CUSTOM STYLE FOR THIS SITE **/
+
+nav .nav-wrapper i {
+    font-size: 1.3rem;
+}
+
+.icon-home-custom {
+    font-size: 135px !important;
+    color: #4A6B8A;
+}
+
+/** END CUSTOM SITE **/
+/**************************************************************/
+/** RADIO BUTTON COLOR **/
+
+[type="radio"].with-gap:checked + label:before {
+    border: 2px solid #4A6B8A !important;
+}
+
+[type="radio"]:checked + label:after {
+    border: 2px solid #4A6B8A !important;
+    background-color: #4A6B8A !important;
+}
+
+/** END RADIO BUTTON COLOR **/
+/**************************************************************/
+/** VOFFSET DEFINITION **/
+
+.voffset1 {
+    margin-top: 10px;
+}
+
+.voffset2 {
+    margin-top: 20px;
+}
+
+.voffset3 {
+    margin-top: 30px;
+}
+
+.voffset4 {
+    margin-top: 40px;
+}
+
+.voffset5 {
+    margin-top: 50px;
+}
+
+.voffset6 {
+    margin-top: 60px;
+}
+
+.voffset7 {
+    margin-top: 70px;
+}
+
+.voffset8 {
+    margin-top: 80px;
+}
+
+/** END VOFFSET **/
+/**************************************************************/
+/** INPUT WITH COLOR **/
+
+input[type=text]:focus:not([readonly]),
+input[type=password]:focus:not([readonly]),
+input[type=email]:focus:not([readonly]),
+input[type=url]:focus:not([readonly]),
+input[type=time]:focus:not([readonly]),
+input[type=date]:focus:not([readonly]),
+input[type=datetime-local]:focus:not([readonly]),
+input[type=tel]:focus:not([readonly]),
+input[type=number]:focus:not([readonly]),
+input[type=search]:focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #4A6B8A !important;
+    box-shadow: 0 1px 0 0 #4A6B8A !important;
+}
+
+input[type=text]:focus:not([readonly]) + label,
+input[type=password]:focus:not([readonly]) + label,
+input[type=email]:focus:not([readonly]) + label,
+input[type=url]:focus:not([readonly]) + label,
+input[type=time]:focus:not([readonly]) + label,
+input[type=date]:focus:not([readonly]) + label,
+input[type=datetime-local]:focus:not([readonly]) + label,
+input[type=tel]:focus:not([readonly]) + label,
+input[type=number]:focus:not([readonly]) + label,
+input[type=search]:focus:not([readonly]) + label,
+textarea.materialize-textarea:focus:not([readonly]) + label {
+    color: #4A6B8A !important;
+}
+
+.input-field label {
+    color: #4A6B8A !important;
+}
+
+/** END INPUT **/
+/**************************************************************/

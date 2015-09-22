@@ -19,7 +19,6 @@ class RightDao extends RightBaseDao implements RightsDaoInterface {
      */
     public function getRightsForUser($user_id)
     {
-        return [];
     }
 
     /**

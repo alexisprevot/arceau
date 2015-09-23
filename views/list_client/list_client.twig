@@ -1,1 +1,9 @@
-<p>List of client</p>
+<h1>Clients</h1>
+<ul>
+    {% for client in clients if user.deleted == 0 %}
+        <table></table>
+        <li>{{ client.nom }}</li>
+    {% else %}
+        <p>Pas de clients</p>
+    {% endfor %}
+</ul>

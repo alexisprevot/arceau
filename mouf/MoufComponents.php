@@ -76,41 +76,12 @@ $moufManager->setAllVariables(array (
 ));
 
 $moufManager->addComponentInstances(array (
-  '__anonymous__61bc_1625135474' => 
+  '__anonymous__a02c_818839_1443034897080' => 
   array (
     'class' => 'Mouf\\Security\\Views\\SimpleLoginView',
     'external' => false,
-    'anonymous' => true,
-    'weak' => true,
-  ),
-  '__anonymous__a02c_762453_1442946031342' => 
-  array (
-    'class' => 'Mouf\\Html\\Utils\\WebLibraryManager\\WebLibraryManager',
-    'external' => false,
     'weak' => true,
     'anonymous' => true,
-    'constructor' => 
-    array (
-      0 => 
-      array (
-        'value' => 'defaultRenderer',
-        'parametertype' => 'object',
-        'type' => 'string',
-        'metadata' => 
-        array (
-        ),
-      ),
-    ),
-    'setterProperties' => 
-    array (
-    ),
-    'setterBinds' => 
-    array (
-      'setWebLibraries' => 
-      array (
-        0 => 'loginLibrary',
-      ),
-    ),
   ),
   '__anonymous__ad9b_112948783' => 
   array (
@@ -403,6 +374,12 @@ return new \\Doctrine\\Common\\Annotations\\CachedReader($reader, $container->ge
     'class' => 'Mouf\\Html\\HtmlElement\\HtmlBlock',
     'external' => false,
     'weak' => false,
+    'fieldProperties' => 
+    array (
+    ),
+    'fieldBinds' => 
+    array (
+    ),
   ),
   'block.left' => 
   array (
@@ -1432,9 +1409,9 @@ return $dbalConnection;',
     'fieldBinds' => 
     array (
       'userService' => 'userService',
-      'simpleLoginView' => '__anonymous__61bc_1625135474',
       'messageService' => 'userMessageService',
       'contentBlock' => 'block.content',
+      'simpleLoginView' => '__anonymous__a02c_818839_1443034897080',
       'template' => 'loginTemplate',
     ),
     'fieldProperties' => 
@@ -1514,13 +1491,42 @@ return $dbalConnection;',
     'setterBinds' => 
     array (
       'setContent' => 'block.content',
-      'setWebLibraryManager' => '__anonymous__a02c_762453_1442946031342',
+      'setWebLibraryManager' => 'loginWebLibraryManager',
       'setDefaultRenderer' => 'defaultRenderer',
       'setLeft' => 'block.left',
       'setRight' => 'block.right',
       'setHeader' => 'block.header',
       'setFooter' => 'block.footer',
       'setTemplateRenderer' => 'bootstrapRenderer',
+    ),
+  ),
+  'loginWebLibraryManager' => 
+  array (
+    'class' => 'Mouf\\Html\\Utils\\WebLibraryManager\\WebLibraryManager',
+    'external' => false,
+    'weak' => false,
+    'constructor' => 
+    array (
+      0 => 
+      array (
+        'value' => 'defaultRenderer',
+        'parametertype' => 'object',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+    ),
+    'setterProperties' => 
+    array (
+    ),
+    'setterBinds' => 
+    array (
+      'setWebLibraries' => 
+      array (
+        0 => 'loginLibrary',
+        1 => 'messageServiceLibrary',
+      ),
     ),
   ),
   'mappingDriverChain' => 
@@ -2754,6 +2760,13 @@ return $dbalConnection;
 	 */
 	 public static function getLoginTemplate() {
 	 	return MoufManager::getMoufManager()->get('loginTemplate');
+	 }
+
+	/**
+	 * @return Mouf\Html\Utils\WebLibraryManager\WebLibraryManager
+	 */
+	 public static function getLoginWebLibraryManager() {
+	 	return MoufManager::getMoufManager()->get('loginWebLibraryManager');
 	 }
 
 	/**

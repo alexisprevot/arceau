@@ -126,7 +126,14 @@ class IndexController extends Controller {
      * @URL /list_client
      */
     public function list_client() {
-        $this->content->addHtmlElement(new TwigTemplate($this->twig, 'views/list_client/list_client.twig', array()));
+
+        $clients = $this->clientDao->findAll();
+
+        $this->content->addHtmlElement(new TwigTemplate($this->twig, 'views/list_client/list_client.twig',
+            array(
+                'clients' => $clients
+            )
+        ));
         $this->template->toHtml();
     }
 
@@ -141,7 +148,7 @@ class IndexController extends Controller {
 
         $this->content->addHtmlElement(new TwigTemplate($this->twig, 'views/profil/profil.twig',
             array(
-                'user'      => $user
+                'user' => $user
             )
         ));
         $this->template->toHtml();

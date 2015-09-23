@@ -35,6 +35,8 @@ use Arceau\Model\Entities\Client;
  * @method Client findOneByVille($fieldValue, $orderBy = null)
  * @method Client findByDeleted($fieldValue, $orderBy = null, $limit = null, $offset = null)
  * @method Client findOneByDeleted($fieldValue, $orderBy = null)
+ * @method Client findByCreatedAt($fieldValue, $orderBy = null, $limit = null, $offset = null)
+ * @method Client findOneByCreatedAt($fieldValue, $orderBy = null)
 
  */
 class ClientBaseDao extends EntityRepository implements DAOInterface
@@ -227,5 +229,17 @@ class ClientBaseDao extends EntityRepository implements DAOInterface
     public function findUniqueByDeleted($fieldValue)
     {
         return $this->findUniqueBy(array('deleted' => $fieldValue));
+    }
+    /**
+     * Finds only one entity by CreatedAt.
+     * Throw an exception if more than one entity was found.
+     *
+     * @param mixed $fieldValue the value of the filtered field
+     *
+     * @return Client
+     */
+    public function findUniqueByCreatedAt($fieldValue)
+    {
+        return $this->findUniqueBy(array('created_at' => $fieldValue));
     }
 }

@@ -9,6 +9,8 @@
 namespace Arceau\Model\Entities;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints\Date;
+use Symfony\Component\Validator\Constraints\DateTime;
 
 /**
  * Class Client
@@ -103,6 +105,12 @@ class Client {
      * @var int
      */
     private $deleted;
+
+    /**
+     * @ORM\Column(type="datetime")
+     * @var \DateTime
+     */
+    private $created_at;
 
     /* --- Getters and setters --- */
 
@@ -288,5 +296,21 @@ class Client {
     public function setDeleted($deleted)
     {
         $this->deleted = $deleted;
+    }
+
+    /**
+     * @return Date
+     */
+    public function getCreatedAt()
+    {
+        return $this->created_at;
+    }
+
+    /**
+     * @param Date $created_at
+     */
+    public function setCreatedAt($created_at)
+    {
+        $this->created_at = $created_at;
     }
 }

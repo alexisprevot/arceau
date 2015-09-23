@@ -14,6 +14,7 @@ use Mouf\Html\HtmlElement\HtmlBlock;
 use Mouf\Security\UserService\UserService;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\Validator\Constraints\DateTime;
 use \Twig_Environment;
 use Mouf\Html\Renderer\Twig\TwigTemplate;
 use Mouf\Mvc\Splash\HtmlResponse;
@@ -190,6 +191,7 @@ class IndexController extends Controller {
             $client->setUser($user);
             $client->setCotisation($cotisation);
             $client->setDeleted(self::NEW_USER);
+            $client->setCreatedAt(new \DateTime());
 
             // Save all the data.
             $this->clientDao->save($client);

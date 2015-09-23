@@ -33,10 +33,6 @@ use Arceau\Model\Entities\Client;
  * @method Client findOneByAdresse($fieldValue, $orderBy = null)
  * @method Client findByVille($fieldValue, $orderBy = null, $limit = null, $offset = null)
  * @method Client findOneByVille($fieldValue, $orderBy = null)
- * @method Client findByUserId($fieldValue, $orderBy = null, $limit = null, $offset = null)
- * @method Client findOneByUserId($fieldValue, $orderBy = null)
- * @method Client findByCotisationId($fieldValue, $orderBy = null, $limit = null, $offset = null)
- * @method Client findOneByCotisationId($fieldValue, $orderBy = null)
  * @method Client findByDeleted($fieldValue, $orderBy = null, $limit = null, $offset = null)
  * @method Client findOneByDeleted($fieldValue, $orderBy = null)
 
@@ -219,30 +215,6 @@ class ClientBaseDao extends EntityRepository implements DAOInterface
     public function findUniqueByVille($fieldValue)
     {
         return $this->findUniqueBy(array('ville' => $fieldValue));
-    }
-    /**
-     * Finds only one entity by UserId.
-     * Throw an exception if more than one entity was found.
-     *
-     * @param mixed $fieldValue the value of the filtered field
-     *
-     * @return Client
-     */
-    public function findUniqueByUserId($fieldValue)
-    {
-        return $this->findUniqueBy(array('user_id' => $fieldValue));
-    }
-    /**
-     * Finds only one entity by CotisationId.
-     * Throw an exception if more than one entity was found.
-     *
-     * @param mixed $fieldValue the value of the filtered field
-     *
-     * @return Client
-     */
-    public function findUniqueByCotisationId($fieldValue)
-    {
-        return $this->findUniqueBy(array('cotisation_id' => $fieldValue));
     }
     /**
      * Finds only one entity by Deleted.

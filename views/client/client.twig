@@ -1,54 +1,54 @@
 <div class="row">
     <h2 class="blue-light-2 center">Ajout d'un nouveau client</h2>
     <div class="hr"></div>
-    <form class="col s12 voffset6" action="{{ constant('ROOT_URL') }}get-form">
+    <form class="col s12 voffset6" action="{{ constant('ROOT_URL') }}get-form" method="post">
         <div class="row">
             <div class="input-field col s6">
-                <input id="nom" type="text" class="validate">
+                <input id="nom" name="nom" type="text" class="validate">
                 <label for="nom">Nom</label>
             </div>
             <div class="input-field col s6">
-                <input id="prenom" type="text" class="validate">
+                <input id="prenom" name="prenom" type="text" class="validate">
                 <label for="prenom">Prénom</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s6">
-                <input id="fonction" type="text" class="validate">
+                <input id="fonction" name="fonction" type="text" class="validate">
                 <label for="fonction">Fonction</label>
             </div>
             <div class="input-field col s6">
-                <input id="institution" type="text" class="validate">
+                <input id="institution" name="institution" type="text" class="validate">
                 <label for="institution">Institution / Entreprise</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s6">
-                <input id="telephone" type="text" class="validate">
+                <input id="telephone" name="telephone" type="text" class="validate">
                 <label for="telephone">Téléphone</label>
             </div>
             <div class="input-field col s6">
-                <input id="email" type="text" class="validate">
+                <input id="email" name="email" type="text" class="validate">
                 <label for="email">Email</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s6">
-                <input id="adresse" type="text" class="validate">
+                <input id="adresse" name="adresse" type="text" class="validate">
                 <label for="adresse">Adresse</label>
             </div>
             <div class="input-field col s6">
-                <input id="ville" type="text" class="validate">
+                <input id="ville" name="ville" type="text" class="validate">
                 <label for="ville">Ville</label>
             </div>
         </div>
         <div class="row">
-        <p><input class="with-gap" name="group1" type="radio" id="50" />
-            <label for="50">Particuliers 50€</label></p>
-        <p><input class="with-gap" name="group1" type="radio" id="100" />
-            <label for="100">Petites entreprises / Labo. 100€</label></p>
-        <p><input class="with-gap" name="group1" type="radio" id="500"  />
-            <label for="500">Grandes entreprises / Institutions 500€</label></p>
+            <p><input class="with-gap" name="radio" type="radio" id="50" value="1" />
+                <label for="50">Particuliers 50€</label></p>
+            <p><input class="with-gap" name="radio" type="radio" id="100" value="2" />
+                <label for="100">Petites entreprises / Labo. 100€</label></p>
+            <p><input class="with-gap" name="radio" type="radio" id="500" value="3" />
+                <label for="500">Grandes entreprises / Institutions 500€</label></p>
         </div>
         <div class="row">
             <div class="col s12 voffset4">

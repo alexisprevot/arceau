@@ -1,9 +1,13 @@
 <?php
 namespace Arceau\Controllers;
 
+use Arceau\Model\DAOs\ClientDao;
+use Arceau\Model\DAOs\CotisationDao;
 use Arceau\Model\DAOs\UserDao;
 use Arceau\Model\Entities\User;
 use Mouf\Doctrine\ORM\MoufResetableEntityManager;
+use Mouf\Html\Widgets\MessageService\Service\UserMessage;
+use Mouf\Html\Widgets\MessageService\Service\UserMessageInterface;
 use Mouf\Mvc\Splash\Controllers\Controller;
 use Mouf\Html\Template\TemplateInterface;
 use Mouf\Html\HtmlElement\HtmlBlock;
@@ -19,6 +23,8 @@ use Mouf\Mvc\Splash\HtmlResponse;
  * @package Arceau\Controllers
  */
 class IndexController extends Controller {
+
+    const NEW_USER = 0;
 
     /**
      * The logger used by this controller.
@@ -56,6 +62,16 @@ class IndexController extends Controller {
     private $userDao;
 
     /**
+     * @var ClientDao
+     */
+    private $clientDao;
+
+    /**
+     * @var CotisationDao
+     */
+    private $cotisationDao;
+
+    /**
      * @var UserService
      */
     private $userService;
@@ -68,13 +84,16 @@ class IndexController extends Controller {
      * @param Twig_Environment $twig The Twig environment (used to render Twig templates)
      */
     public function __construct(LoggerInterface $logger, TemplateInterface $template, HtmlBlock $content, Twig_Environment $twig,
-                                MoufResetableEntityManager $entityManager, UserDao $userDao, UserService $userService) {
+                                MoufResetableEntityManager $entityManager, UserDao $userDao, ClientDao $clientDao,
+                                CotisationDao $cotisationDao, UserService $userService) {
         $this->logger = $logger;
         $this->template = $template;
         $this->content = $content;
         $this->twig = $twig;
         $this->entityManager = $entityManager;
         $this->userDao = $userDao;
+        $this->clientDao = $clientDao;
+        $this->cotisationDao = $cotisationDao;
         $this->userService = $userService;
     }
 
@@ -131,12 +150,50 @@ class IndexController extends Controller {
     /**
      * This function get the form.
      *
+     * @Post
      * @Logged
      * @URL /get-form
      */
-    public function submit_form() {
-        echo "test";
-        // TODO : GET FORM INFO
+    public function submit_form($nom = null, $prenom = null, $fonction = null, $institution = null,
+                                $telephone = null, $email = null, $adresse = null, $ville = null, $radio = null) {
+
+        if (!empty($nom) && !empty($prenom)
+            && !empty($fonction) && !empty($institution)
+            && !empty($telephone) && !empty($email)
+            && !empty($adresse) && !empty($ville) && !empty($radio)) {
+
+            // Getting the current user object from the user service.
+            $user = $this->userService->getLoggedUser();
+
+            // Getting cotisation object with his id from the radio.
+            $cotisation = $this->cotisationDao->getById($radio);
+
+            // Create an object of client.
+            $client = $this->clientDao->create();
+
+            // Setting all the value into the DB.
+            $client->setNom($nom);
+            $client->setPrenom($prenom);
+            $client->setFonction($fonction);
+            $client->setInstitution($institution);
+            $client->setTelephone($telephone);
+            $client->setEmail($email);
+            $client->setAdresse($adresse);
+            $client->setVille($ville);
+            $client->setUser($user);
+            $client->setCotisation($cotisation);
+            $client->setDeleted(self::NEW_USER);
+
+            // Save all the data.
+            $this->clientDao->save($client);
+            $this->entityManager->flush();
+
+            set_user_message('Le client a été ajouté.', UserMessageInterface::SUCCESS);
+            header('Location: ' . ROOT_URL);
+        } else {
+            set_user_message('Le formulaire n\'est pas valide.');
+            header('Location: ' . ROOT_URL . 'add_client');
+        }
     }
 
     /**

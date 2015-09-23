@@ -1344,6 +1344,24 @@ return $dbalConnection;',
       ),
       6 => 
       array (
+        'value' => 'clientDao',
+        'parametertype' => 'object',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      7 => 
+      array (
+        'value' => 'cotisationDao',
+        'parametertype' => 'object',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      8 => 
+      array (
         'value' => 'userService',
         'parametertype' => 'object',
         'type' => 'string',
@@ -1938,24 +1956,6 @@ return $dbalConnection;',
     'class' => 'Mouf\\Utils\\Common\\Validators\\RequiredValidator',
     'external' => false,
     'weak' => false,
-  ),
-  'rightDao' => 
-  array (
-    'class' => 'Arceau\\Model\\DAOs\\RightDao',
-    'external' => false,
-    'weak' => false,
-    'constructor' => 
-    array (
-      0 => 
-      array (
-        'value' => 'entityManager',
-        'parametertype' => 'object',
-        'type' => 'string',
-        'metadata' => 
-        array (
-        ),
-      ),
-    ),
   ),
   'rightsService' => 
   array (
@@ -2880,13 +2880,6 @@ return $dbalConnection;
 	 */
 	 public static function getRequiredValidator() {
 	 	return MoufManager::getMoufManager()->get('requiredValidator');
-	 }
-
-	/**
-	 * @return Arceau\Model\DAOs\RightDao
-	 */
-	 public static function getRightDao() {
-	 	return MoufManager::getMoufManager()->get('rightDao');
 	 }
 
 	/**

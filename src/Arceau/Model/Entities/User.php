@@ -54,13 +54,6 @@ class User implements UserInterface {
      */
     private $prenom;
 
-    /**
-     * @ORM\Column(type="integer")
-     *
-     * @var int
-     */
-    private $right_id;
-
     /* --- Getters and setters --- */
 
     /**
@@ -141,21 +134,5 @@ class User implements UserInterface {
     public function getLogin()
     {
         return $this->getEmail();
-    }
-
-    /**
-     * @return int
-     */
-    public function getRightId()
-    {
-        return $this->right_id;
-    }
-
-    /**
-     * @param int $right_id
-     */
-    public function setRightId($right_id)
-    {
-        $this->right_id = $right_id;
     }
 }

@@ -82,18 +82,20 @@ class Client {
     private $ville;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\ManyToOne(targetEntity="User")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      *
      * @var int
      */
-    private $user_id;
+    private $user;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\ManyToOne(targetEntity="Cotisation")
+     * @ORM\JoinColumn(name="cotisation_id", referencedColumnName="id")
      *
      * @var int
      */
-    private $cotisation_id;
+    private $cotisation;
 
     /**
      * @ORM\Column(type="integer")
@@ -243,33 +245,33 @@ class Client {
     /**
      * @return int
      */
-    public function getUserId()
+    public function getUser()
     {
-        return $this->user_id;
+        return $this->user;
     }
 
     /**
-     * @param int $user_id
+     * @param int $user
      */
-    public function setUserId($user_id)
+    public function setUser($user)
     {
-        $this->user_id = $user_id;
+        $this->user = $user;
     }
 
     /**
      * @return int
      */
-    public function getCotisationId()
+    public function getCotisation()
     {
-        return $this->cotisation_id;
+        return $this->cotisation;
     }
 
     /**
-     * @param int $cotisation_id
+     * @param int $cotisation
      */
-    public function setCotisationId($cotisation_id)
+    public function setCotisation($cotisation)
     {
-        $this->cotisation_id = $cotisation_id;
+        $this->cotisation = $cotisation;
     }
 
     /**

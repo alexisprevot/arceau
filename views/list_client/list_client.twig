@@ -1,9 +1,33 @@
 <h1>Clients</h1>
-<ul>
+<table class="bordered centered">
+    <thead>
+    <tr>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Fonction</th>
+        <th>Institution</th>
+        <th>Téléphone</th>
+        <th>Email</th>
+        <th>Adresse</th>
+        <th>Ville</th>
+        <th>Cotisation</th>
+    </tr>
+    </thead>
     {% for client in clients if user.deleted == 0 %}
-        <table></table>
-        <li>{{ client.nom }}</li>
+        <tbody>
+            <tr>
+                <td>{{ client.nom }}</td>
+                <td>{{ client.prenom }}</td>
+                <td>{{ client.fonction }}</td>
+                <td>{{ client.institution }}</td>
+                <td>{{ client.telephone }}</td>
+                <td>{{ client.email }}</td>
+                <td>{{ client.adresse }}</td>
+                <td>{{ client.ville }}</td>
+                <td>{{ client.cotisation.somme }} €</td>
+            </tr>
+        </tbody>
     {% else %}
         <p>Pas de clients</p>
     {% endfor %}
-</ul>
+</table>

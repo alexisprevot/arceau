@@ -212,7 +212,7 @@ class IndexController extends Controller {
      * @URL /disconnect
      */
     public function disconnect() {
-        \Mouf::getSessionManager()->destroy();
+        $this->userService->logoff();
         header('Location:' . ROOT_URL);
     }
 }

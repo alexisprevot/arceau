@@ -810,6 +810,60 @@ return new \\Doctrine\\Common\\Annotations\\CachedReader($reader, $container->ge
     'external' => false,
     'weak' => false,
   ),
+  'dbpatch.Cotisation-patch' => 
+  array (
+    'class' => 'Mouf\\Database\\Patcher\\DatabasePatch',
+    'external' => false,
+    'weak' => false,
+    'constructor' => 
+    array (
+      0 => 
+      array (
+        'value' => 'dbConnection',
+        'parametertype' => 'object',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      1 => 
+      array (
+        'value' => 'Cotisation-patch',
+        'parametertype' => 'primitive',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      2 => 
+      array (
+        'value' => 'database/up/patch.sql',
+        'parametertype' => 'primitive',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      3 => 
+      array (
+        'value' => NULL,
+        'parametertype' => 'object',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      4 => 
+      array (
+        'value' => 'Cotisation-patch',
+        'parametertype' => 'primitive',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+    ),
+  ),
   'defaultDoctrineCache' => 
   array (
     'weak' => false,
@@ -1910,6 +1964,13 @@ return $dbalConnection;',
     'class' => 'Mouf\\Utils\\Patcher\\PatchService',
     'external' => false,
     'weak' => false,
+    'setterBinds' => 
+    array (
+      'setPatchs' => 
+      array (
+        0 => 'dbpatch.Cotisation-patch',
+      ),
+    ),
   ),
   'phpVarsCheckRouter' => 
   array (
@@ -3040,6 +3101,13 @@ return $dbalConnection;
 	 */
 	 public static function getWhoopsMiddleware() {
 	 	return MoufManager::getMoufManager()->get('whoopsMiddleware');
+	 }
+
+	/**
+	 * @return Mouf\Database\Patcher\DatabasePatch
+	 */
+	 public static function getDbpatch_Cotisationpatch() {
+	 	return MoufManager::getMoufManager()->get('dbpatch.Cotisation-patch');
 	 }
 
 }
